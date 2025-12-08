@@ -1,0 +1,32 @@
+# macOS junk
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Models
+*.pt
+*.pth
+*.h5
+*.safetensors
+
+# Databases
+*.sqlite
+*.db
+
+# Audio data files
+*.wav
+*.mp3
+
+# Env folders
+venv/
+env/
+
+# Node modules
+node_modules/
+
+# Secrets - NEVER commit these!
+credentials.json
+token.pickle
+*.pickle
