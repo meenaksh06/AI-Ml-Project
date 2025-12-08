@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 🤖 TaskFlow AI
+=======
+# AI Personal Assistant
+>>>>>>> da8f3467eacb9d11b581cd6276ca9f1d9c32c88d
 
 An intelligent, multi-modal AI assistant built with state-of-the-art NLP models for intent classification, entity extraction, and speech-to-text capabilities.
 
@@ -9,7 +13,7 @@ An intelligent, multi-modal AI assistant built with state-of-the-art NLP models 
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 This project implements a comprehensive AI assistant that can:
 
@@ -21,16 +25,16 @@ This project implements a comprehensive AI assistant that can:
 
 ### Key Improvements Over Baseline
 
-| Component | Baseline | Enhanced |
-|-----------|----------|----------|
-| Intent Classification | Zero-shot (75-85%) | Fine-tuned (~95%) |
-| Entity Extraction | Regex only | spaCy NER + Patterns |
-| Speed | ~500ms/query | ~50ms/query |
-| Voice Support | Not integrated | Full Whisper integration |
+| Component             | Baseline           | Enhanced                 |
+| --------------------- | ------------------ | ------------------------ |
+| Intent Classification | Zero-shot (75-85%) | Fine-tuned (~95%)        |
+| Entity Extraction     | Regex only         | spaCy NER + Patterns     |
+| Speed                 | ~500ms/query       | ~50ms/query              |
+| Voice Support         | Not integrated     | Full Whisper integration |
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -73,7 +77,7 @@ This project implements a comprehensive AI assistant that can:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AI:ML Project 4/
@@ -104,7 +108,7 @@ AI:ML Project 4/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
@@ -121,6 +125,7 @@ python train_intent_classifier.py
 ```
 
 This will:
+
 - Train a fine-tuned DistilBERT classifier
 - Generate evaluation metrics
 - Save model to `models/intent_classifier/`
@@ -139,9 +144,10 @@ uvicorn app_enhanced:app --reload --port 8000
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### POST `/infer`
+
 Process text input and return assistant response.
 
 ```bash
@@ -151,6 +157,7 @@ curl -X POST "http://localhost:8000/infer" \
 ```
 
 **Response:**
+
 ```json
 {
   "intent": "schedule_meeting",
@@ -160,11 +167,12 @@ curl -X POST "http://localhost:8000/infer" \
     "names": ["John"],
     "datetime": "2024-12-08T15:00:00"
   },
-  "response": "✅ Meeting scheduled with John at 2024-12-08T15:00:00."
+  "response": "  Meeting scheduled with John at 2024-12-08T15:00:00."
 }
 ```
 
 ### POST `/voice`
+
 Process audio input via speech-to-text.
 
 ```bash
@@ -173,57 +181,60 @@ curl -X POST "http://localhost:8000/voice?user_id=user123" \
 ```
 
 ### GET `/context/{user_id}`
+
 Retrieve user session data.
 
 ### GET `/reset/{user_id}`
+
 Clear user session.
 
 ### GET `/history/{user_id}`
+
 Get conversation history.
 
 ---
 
-## 🎯 Supported Intents
+## Supported Intents
 
-| Intent | Example Commands |
-|--------|-----------------|
-| `schedule_meeting` | "Schedule a meeting with John at 3pm" |
-| `send_email` | "Email sarah@company.com about the project" |
-| `check_calendar` | "What meetings do I have today?" |
-| `cancel_meeting` | "Cancel my 2pm appointment" |
-| `add_reminder` | "Remind me to call mom at 5pm" |
-| `check_reminders` | "What are my reminders?" |
-| `send_message` | "Tell Mike I'll be late" |
-| `general_query` | "Hello", "What can you do?" |
+| Intent             | Example Commands                            |
+| ------------------ | ------------------------------------------- |
+| `schedule_meeting` | "Schedule a meeting with John at 3pm"       |
+| `send_email`       | "Email sarah@company.com about the project" |
+| `check_calendar`   | "What meetings do I have today?"            |
+| `cancel_meeting`   | "Cancel my 2pm appointment"                 |
+| `add_reminder`     | "Remind me to call mom at 5pm"              |
+| `check_reminders`  | "What are my reminders?"                    |
+| `send_message`     | "Tell Mike I'll be late"                    |
+| `general_query`    | "Hello", "What can you do?"                 |
 
 ---
 
-## 📊 Model Performance
+## Model Performance
 
 ### Intent Classification Results
 
 After training on 320 examples across 8 intents:
 
-| Metric | Fine-tuned | Zero-shot Baseline |
-|--------|------------|-------------------|
-| Accuracy | ~95% | ~78% |
-| F1 Score | ~0.94 | ~0.75 |
-| Inference Time | ~50ms | ~500ms |
+| Metric         | Fine-tuned | Zero-shot Baseline |
+| -------------- | ---------- | ------------------ |
+| Accuracy       | ~95%       | ~78%               |
+| F1 Score       | ~0.94      | ~0.75              |
+| Inference Time | ~50ms      | ~500ms             |
 
 ### Entity Extraction
 
 The enhanced entity extractor handles:
 
-- ✅ **Names**: "John", "Dr. Smith", "john" (case-insensitive)
-- ✅ **Emails**: Various formats
-- ✅ **Times**: "3pm", "15:00", "noon", "5ish", "in 2 hours"
-- ✅ **Dates**: "tomorrow", "next Monday", "Dec 15"
-- ✅ **Organizations**: Company names via NER
-- ✅ **Phone Numbers**: Multiple formats
+- **Names**: "John", "Dr. Smith", "john" (case-insensitive)
+- **Emails**: Various formats
+- **Times**: "3pm", "15:00", "noon", "5ish", "in 2 hours"
+- **Dates**: "tomorrow", "next Monday", "Dec 15"
+- **Organizations**: Company names via NER
+- **Phone Numbers**: Multiple formats
 
 ---
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Models Used
 
@@ -247,7 +258,7 @@ CONFIG = {
 
 ---
 
-## 🎨 Web Interface Features
+## Web Interface Features
 
 - **Modern Dark Theme** with light mode toggle
 - **Voice Recording** with browser microphone
@@ -259,7 +270,7 @@ CONFIG = {
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 
 - [ ] Add more training data for edge cases
 - [ ] Implement conversation context for follow-ups
@@ -271,23 +282,23 @@ CONFIG = {
 
 ---
 
-## 👥 Authors
+## Authors
 
-- Nanda P.V
-- Meenakshi
+- Meenaksh Singhania
+- Eranki Sai Vikas
+- Prerak Arya
 
 ---
 
-## 📄 License
+## License
 
 This project is for educational purposes as part of AI/ML coursework.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Hugging Face Transformers
 - spaCy NLP
 - OpenAI Whisper
 - FastAPI Framework
-
