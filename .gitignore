@@ -26,7 +26,4 @@ env/
 # Node modules
 node_modules/
 
-# Secrets - NEVER commit these!
-credentials.json
-token.pickle
-*.pickle
+# Note: credentials.json and token.pickle are included for project evaluation purposes
