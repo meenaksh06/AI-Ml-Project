@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # 🤖 TaskFlow AI
-=======
-# AI Personal Assistant
->>>>>>> da8f3467eacb9d11b581cd6276ca9f1d9c32c88d
 
 An intelligent, multi-modal AI assistant built with state-of-the-art NLP models for intent classification, entity extraction, and speech-to-text capabilities.
 
