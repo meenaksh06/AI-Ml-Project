@@ -21,12 +21,12 @@ This project implements a comprehensive AI assistant that can:
 
 ### Key Improvements Over Baseline
 
-| Component | Baseline | Enhanced |
-|-----------|----------|----------|
-| Intent Classification | Zero-shot (75-85%) | Fine-tuned (~95%) |
-| Entity Extraction | Regex only | spaCy NER + Patterns |
-| Speed | ~500ms/query | ~50ms/query |
-| Voice Support | Not integrated | Full Whisper integration |
+| Component             | Baseline           | Enhanced                 |
+| --------------------- | ------------------ | ------------------------ |
+| Intent Classification | Zero-shot (75-85%) | Fine-tuned (~95%)        |
+| Entity Extraction     | Regex only         | spaCy NER + Patterns     |
+| Speed                 | ~500ms/query       | ~50ms/query              |
+| Voice Support         | Not integrated     | Full Whisper integration |
 
 ---
 
@@ -121,6 +121,7 @@ python train_intent_classifier.py
 ```
 
 This will:
+
 - Train a fine-tuned DistilBERT classifier
 - Generate evaluation metrics
 - Save model to `models/intent_classifier/`
@@ -142,6 +143,7 @@ uvicorn app_enhanced:app --reload --port 8000
 ## 📡 API Endpoints
 
 ### POST `/infer`
+
 Process text input and return assistant response.
 
 ```bash
@@ -151,6 +153,7 @@ curl -X POST "http://localhost:8000/infer" \
 ```
 
 **Response:**
+
 ```json
 {
   "intent": "schedule_meeting",
@@ -165,6 +168,7 @@ curl -X POST "http://localhost:8000/infer" \
 ```
 
 ### POST `/voice`
+
 Process audio input via speech-to-text.
 
 ```bash
@@ -173,28 +177,31 @@ curl -X POST "http://localhost:8000/voice?user_id=user123" \
 ```
 
 ### GET `/context/{user_id}`
+
 Retrieve user session data.
 
 ### GET `/reset/{user_id}`
+
 Clear user session.
 
 ### GET `/history/{user_id}`
+
 Get conversation history.
 
 ---
 
 ## 🎯 Supported Intents
 
-| Intent | Example Commands |
-|--------|-----------------|
-| `schedule_meeting` | "Schedule a meeting with John at 3pm" |
-| `send_email` | "Email sarah@company.com about the project" |
-| `check_calendar` | "What meetings do I have today?" |
-| `cancel_meeting` | "Cancel my 2pm appointment" |
-| `add_reminder` | "Remind me to call mom at 5pm" |
-| `check_reminders` | "What are my reminders?" |
-| `send_message` | "Tell Mike I'll be late" |
-| `general_query` | "Hello", "What can you do?" |
+| Intent             | Example Commands                            |
+| ------------------ | ------------------------------------------- |
+| `schedule_meeting` | "Schedule a meeting with John at 3pm"       |
+| `send_email`       | "Email sarah@company.com about the project" |
+| `check_calendar`   | "What meetings do I have today?"            |
+| `cancel_meeting`   | "Cancel my 2pm appointment"                 |
+| `add_reminder`     | "Remind me to call mom at 5pm"              |
+| `check_reminders`  | "What are my reminders?"                    |
+| `send_message`     | "Tell Mike I'll be late"                    |
+| `general_query`    | "Hello", "What can you do?"                 |
 
 ---
 
@@ -204,11 +211,11 @@ Get conversation history.
 
 After training on 320 examples across 8 intents:
 
-| Metric | Fine-tuned | Zero-shot Baseline |
-|--------|------------|-------------------|
-| Accuracy | ~95% | ~78% |
-| F1 Score | ~0.94 | ~0.75 |
-| Inference Time | ~50ms | ~500ms |
+| Metric         | Fine-tuned | Zero-shot Baseline |
+| -------------- | ---------- | ------------------ |
+| Accuracy       | ~95%       | ~78%               |
+| F1 Score       | ~0.94      | ~0.75              |
+| Inference Time | ~50ms      | ~500ms             |
 
 ### Entity Extraction
 
@@ -273,8 +280,9 @@ CONFIG = {
 
 ## 👥 Authors
 
-- Nanda P.V
-- Meenakshi
+- Meenaksh Singhania
+- Eranki Sai Vikas
+- Prerak Arya
 
 ---
 
@@ -290,4 +298,3 @@ This project is for educational purposes as part of AI/ML coursework.
 - spaCy NLP
 - OpenAI Whisper
 - FastAPI Framework
-
