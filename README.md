@@ -1,4 +1,4 @@
-# 🤖 TaskFlow AI
+# TaskFlow AI
 
 An intelligent, multi-modal AI assistant built with state-of-the-art NLP models for intent classification, entity extraction, and speech-to-text capabilities.
 
